@@ -35,8 +35,8 @@ int main()
     inicializarBicicletas(bicicletas, TAMBICI);
     inicializarTrabajos(trabajos, TAMTRAB);
 
-    hardcodearBicicletas(bicicletas, TAMBICI, 10, &nextIdBicicleta);
-    opcionA=1;
+    //hardcodearBicicletas(bicicletas, TAMBICI, 10, &nextIdBicicleta);
+    //opcionA=1;
 
     do
     {
@@ -112,11 +112,11 @@ int main()
                 }
                 else
                 {
-                    printf("No hay ningún trabajo dado de alta para listar.\n");
+                    printf("No hay ningï¿½n trabajo dado de alta para listar.\n");
                 }
                 break;
             case 'J':
-                validarCaracter(&salir, "\nConfirmar salida (S/N): ", "Opción inválida. Confirmar salida (S/N): ", 'S', 'N');
+                validarCaracter(&salir, "\nConfirmar salida (S/N): ", "Opciï¿½n invï¿½lida. Confirmar salida (S/N): ", 'S', 'N');
 
                 if(salir=='S')
                 {
@@ -124,7 +124,7 @@ int main()
                 }
                 break;
             default:
-                printf("Opción inválida. Ingrese una opción de la A a la J.\n");
+                printf("Opciï¿½n invï¿½lida. Ingrese una opciï¿½n de la A a la J.\n");
                 fflush(stdin);
                 break;
         }

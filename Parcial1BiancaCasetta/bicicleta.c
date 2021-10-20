@@ -192,23 +192,22 @@ int altaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTi
 
             validarEntero(&auxBicicleta.idTipo,
                           "Ingrese el ID del tipo de bicicleta: ",
-                          "ID inválido. Ingrese el ID del tipo de bicicleta: ",
+                          "ID invï¿½lido. Ingrese el ID del tipo de bicicleta: ",
                           tipos[0].id,
                           tipos[tamTipo-1].id);
-            ffkush(stdin);
 
             mostrarColores(colores, tamColor);
 
             validarEntero(&auxBicicleta.idColor,
                           "Ingrese el ID del color de la bicicleta: ",
-                          "ID inválido. Ingrese el ID del color de la bicicleta: ",
+                          "ID invï¿½lido. Ingrese el ID del color de la bicicleta: ",
                           colores[0].id,
                           colores[tamColor-1].id);
             fflush(stdin);
 
             validarCaracter(&auxBicicleta.material,
                             "Ingrese el material (C=Carbono/A=Aluminio): ",
-                            "Material inválido. Ingrese el material (C=Carbono/A=Aluminio): ",
+                            "Material invï¿½lido. Ingrese el material (C=Carbono/A=Aluminio): ",
                             'C', 'A');
 
             auxBicicleta.isEmpty=0;
@@ -228,7 +227,7 @@ int altaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTi
         }
         else
         {
-            printf("\nNo hay más lugar disponible para nuevas altas.\n\n");
+            printf("\nNo hay mï¿½s lugar disponible para nuevas altas.\n\n");
         }
     }
 
@@ -281,7 +280,7 @@ int bajaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTi
 
             validarCaracter(&confirmacion,
                            "\nConfirmar baja (S/N): ",
-                           "Respuesta inválida. Confirmar baja (S/N): ",
+                           "Respuesta invï¿½lida. Confirmar baja (S/N): ",
                            'S',
                            'N');
 
@@ -344,7 +343,7 @@ int modificarBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int 
 
                     validarEntero(&auxBicicleta.idTipo,
                                   "Ingrese el ID del tipo de bicicleta: ",
-                                  "ID inválido. Ingrese el ID del tipo de bicicleta: ",
+                                  "ID invï¿½lido. Ingrese el ID del tipo de bicicleta: ",
                                   tipos[0].id,
                                   tipos[tamBici-1].id);
                     fflush(stdin);
@@ -354,7 +353,7 @@ int modificarBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int 
                 case 'B':
                     validarCaracter(&auxBicicleta.material,
                                     "Ingrese el material (C=Carbono/A=Aluminio): ",
-                                    "Material inválido. Ingrese el material (C=Carbono/A=Aluminio): ",
+                                    "Material invï¿½lido. Ingrese el material (C=Carbono/A=Aluminio): ",
                                     'C', 'A');
 
                     bicicletas[indiceId].material=auxBicicleta.material;
@@ -363,14 +362,14 @@ int modificarBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int 
                     printf("\n");
                     break;
                 default:
-                    printf("Opción inválida. Ingrese una opción de la A a la C.\n");
+                    printf("Opciï¿½n invï¿½lida. Ingrese una opciï¿½n de la A a la C.\n");
                     break;
             }
 
             if(opcion=='A' || opcion=='B')
             {
                 system("cls");
-                printf("Modificación exitosa.\n");
+                printf("Modificaciï¿½n exitosa.\n");
                 printf("Se ha modificado a la siguiente bicicleta: \n\n");
                 printf(" ID |        MARCA        |   TIPO   |  COLOR  | MATERIAL \n");
                 printf("----------------------------------------------------------\n");

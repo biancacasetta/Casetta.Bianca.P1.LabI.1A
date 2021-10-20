@@ -139,7 +139,7 @@ int altaTrabajo(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int t
             while(validarIdBicicleta(bicicletas, tamBici, auxTrabajo.idBicicleta)==-1)
             {
                 mostrarBicicletas(bicicletas, tamBici, tipos, tamTipo, colores, tamColor);
-                printf("ID inválido. Ingrese el ID de la bicicleta para el trabajo: ");
+                printf("ID invï¿½lido. Ingrese el ID de la bicicleta para el trabajo: ");
                 scanf("%d", &auxTrabajo.idBicicleta);
                 fflush(stdin);
             }
@@ -147,7 +147,7 @@ int altaTrabajo(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int t
             mostrarServicios(servicios, tamServ);
             validarEntero(&auxTrabajo.idServicio,
                           "Ingrese el ID del servicio: ",
-                          "ID inválido. Ingrese el ID del servicio: ",
+                          "ID invï¿½lido. Ingrese el ID del servicio: ",
                           servicios[0].id,
                           servicios[tamServ-1].id);
             fflush(stdin);
@@ -173,7 +173,7 @@ int altaTrabajo(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int t
         }
         else
         {
-            printf("\nNo hay más lugar disponible para nuevas altas.\n\n");
+            printf("\nNo hay mï¿½s lugar disponible para nuevas altas.\n\n");
         }
     }
 
