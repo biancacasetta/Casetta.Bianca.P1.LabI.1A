@@ -13,3 +13,5 @@
  * \return int contador -1 si hubo error
  */
 int hardcodearBicicletas(eBicicleta bicicletas[], int tamBici, int cantidad, int* id);
+
+int hardcodearTrabajos(eTrabajo trabajos[], int tamTrab, int cantidad, int* id);

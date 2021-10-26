@@ -115,5 +115,3 @@ int modificarBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int 
  * \return int -1 si hubo error, 0 si no hubo error
  */
 int bajaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
-
-int mostrarBicicletasColores(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
