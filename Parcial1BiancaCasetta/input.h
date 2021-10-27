@@ -5,14 +5,24 @@
 #include "bicicleta.h"
 
 /** \brief Muestra un menú inicial de opciones para seleccionar
- * \return int La opción seleccionada por el usuario, para luego usar de criterio en un switch
+ * \return char La opción seleccionada por el usuario, para luego usar de criterio en un switch
  */
 char menu();
 
 /** \brief Muestra un submenú cuando se selecciona la opción Modificar con las opciones de datos que se pueden cambiar
- * \return int La opción seleccionada por el usuario, para luego usar de criterio en un switch
+ * \return char La opción seleccionada por el usuario, para luego usar de criterio en un switch
  */
 char subMenuModificar();
+
+/** \brief Muestra un submenú cuando se selecciona la opción Informes de Bicicletas con las opciones de informes que se pueden mostrar
+ * \return char La opción seleccionada por el usuario, para luego usar de criterio en un switch
+ */
+char subMenuInformesBicicletas();
+
+/** \brief Muestra un submenú cuando se selecciona la opción Informes de Trabajos con las opciones de informes que se pueden mostrar
+ * \return char La opción seleccionada por el usuario, para luego usar de criterio en un switch
+ */
+char subMenuInformesTrabajos();
 
 /** \brief Valida que la cadena de caracteres ingresada contenga letras únicamente, sin permitir números ni símbolos
  * \param cadena[] char La cadena de caracteres a validar
@@ -65,11 +75,3 @@ int validarFlotante(float* numero, char mensaje[], char mensajeError[], float mi
  * \return 1 si hubo error, 0 si no hubo error
  */
 int validarEntero(int* numero, char mensaje[], char mensajeError[], int min, int max);
-
-/** \brief Valida que el ID ingresado sea un ID existente de bicicleta
- * \param bicicletas[] eBicicleta array a recorrer
- * \param tamBici int tamaño de array
- * \param idBicicleta int el ID a validar si existe
- * \return -1 si hubo error, 0 si no hubo error
- */
-int validarIdBicicleta(eBicicleta bicicletas[], int tamBici, int idBicicleta);

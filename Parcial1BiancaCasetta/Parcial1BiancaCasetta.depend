@@ -504,7 +504,7 @@
 	"color.h"
 	"fecha.h"
 
-1634734674 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\trabajo.h
+1635342124 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\trabajo.h
 	"fecha.h"
 	"bicicleta.h"
 	"servicio.h"
@@ -512,7 +512,7 @@
 
 1634733120 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\fecha.h
 
-1635286630 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\bicicleta.h
+1635341906 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\bicicleta.h
 	"tipo.h"
 	"color.h"
 
@@ -522,10 +522,10 @@
 
 1634734149 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\servicio.h
 
-1634734890 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\input.h
+1635337366 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\input.h
 	"bicicleta.h"
 
-1634689745 source:c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\fecha.c
+1635317829 source:c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\fecha.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -533,7 +533,7 @@
 	"input.h"
 	"fecha.h"
 
-1634732018 source:c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\input.c
+1635336804 source:c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\input.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -565,5 +565,53 @@
 	"servicio.h"
 	"tipo.h"
 	"color.h"
+	"fecha.h"
+
+1635340542 source:c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\bicicleta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+	"bicicleta.h"
+	"tipo.h"
+	"color.h"
+
+1635336415 source:c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\hardcode.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"bicicleta.h"
+	"hardcode.h"
+	"trabajo.h"
+
+1635336403 c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\hardcode.h
+	"bicicleta.h"
+	"trabajo.h"
+
+1635341240 source:c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"trabajo.h"
+	"input.h"
+	"bicicleta.h"
+	"servicio.h"
+	"tipo.h"
+	"color.h"
+	"fecha.h"
+	"hardcode.h"
+
+1635341196 source:c:\users\bianca\desktop\codeblocks proyectos\laboratorio\parcial1biancacasetta\trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"trabajo.h"
+	"input.h"
+	"bicicleta.h"
+	"servicio.h"
 	"fecha.h"
 

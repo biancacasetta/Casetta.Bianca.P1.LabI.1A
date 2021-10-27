@@ -192,7 +192,7 @@ int altaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTi
 
             validarEntero(&auxBicicleta.idTipo,
                           "Ingrese el ID del tipo de bicicleta: ",
-                          "ID inv�lido. Ingrese el ID del tipo de bicicleta: ",
+                          "ID inválido. Ingrese el ID del tipo de bicicleta: ",
                           tipos[0].id,
                           tipos[tamTipo-1].id);
 
@@ -200,14 +200,14 @@ int altaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTi
 
             validarEntero(&auxBicicleta.idColor,
                           "Ingrese el ID del color de la bicicleta: ",
-                          "ID inv�lido. Ingrese el ID del color de la bicicleta: ",
+                          "ID inválido. Ingrese el ID del color de la bicicleta: ",
                           colores[0].id,
                           colores[tamColor-1].id);
             fflush(stdin);
 
             validarCaracter(&auxBicicleta.material,
                             "Ingrese el material (C=Carbono/A=Aluminio): ",
-                            "Material inv�lido. Ingrese el material (C=Carbono/A=Aluminio): ",
+                            "Material inválido. Ingrese el material (C=Carbono/A=Aluminio): ",
                             'C', 'A');
 
             auxBicicleta.isEmpty=0;
@@ -215,7 +215,7 @@ int altaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTi
             bicicletas[indiceDisponible]=auxBicicleta;
 
             system("cls");
-            printf("\nAlta exitosa.\n");
+            printf("Alta exitosa.\n");
             printf("Se ha dado de alta a la siguiente bicicleta: \n\n");
 
             printf(" ID |        MARCA        |   TIPO   |  COLOR  | MATERIAL \n");
@@ -227,7 +227,7 @@ int altaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTi
         }
         else
         {
-            printf("\nNo hay m�s lugar disponible para nuevas altas.\n\n");
+            printf("\nNo hay más lugar disponible para nuevas altas.\n\n");
         }
     }
 
@@ -280,7 +280,7 @@ int bajaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTi
 
             validarCaracter(&confirmacion,
                            "\nConfirmar baja (S/N): ",
-                           "Respuesta inv�lida. Confirmar baja (S/N): ",
+                           "Respuesta inválida. Confirmar baja (S/N): ",
                            'S',
                            'N');
 
@@ -343,9 +343,9 @@ int modificarBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int 
 
                     validarEntero(&auxBicicleta.idTipo,
                                   "Ingrese el ID del tipo de bicicleta: ",
-                                  "ID inv�lido. Ingrese el ID del tipo de bicicleta: ",
+                                  "ID inválido. Ingrese el ID del tipo de bicicleta: ",
                                   tipos[0].id,
-                                  tipos[tamBici-1].id);
+                                  tipos[tamTipo-1].id);
                     fflush(stdin);
 
                     bicicletas[indiceId].idTipo=auxBicicleta.idTipo;
@@ -353,23 +353,23 @@ int modificarBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int 
                 case 'B':
                     validarCaracter(&auxBicicleta.material,
                                     "Ingrese el material (C=Carbono/A=Aluminio): ",
-                                    "Material inv�lido. Ingrese el material (C=Carbono/A=Aluminio): ",
+                                    "Material inválido. Ingrese el material (C=Carbono/A=Aluminio): ",
                                     'C', 'A');
 
                     bicicletas[indiceId].material=auxBicicleta.material;
                     break;
                 case 'C':
-                    printf("\n");
+                    printf("Modificación cancelada.\n\n");
                     break;
                 default:
-                    printf("Opci�n inv�lida. Ingrese una opci�n de la A a la C.\n");
+                    printf("Opción inválida. Ingrese una opción de la A a la C.\n");
                     break;
             }
 
             if(opcion=='A' || opcion=='B')
             {
                 system("cls");
-                printf("Modificaci�n exitosa.\n");
+                printf("Modificación exitosa.\n");
                 printf("Se ha modificado a la siguiente bicicleta: \n\n");
                 printf(" ID |        MARCA        |   TIPO   |  COLOR  | MATERIAL \n");
                 printf("----------------------------------------------------------\n");
@@ -383,6 +383,364 @@ int modificarBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int 
         {
             printf("No existe el ID ingresado.\n\n");
         }
+    }
+    return error;
+}
+
+int informarBicicletas(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor)
+{
+    int error=-1;
+
+    if(bicicletas!=NULL && tamBici>0 && tipos!=NULL && tamTipo>0 && colores!=NULL && tamColor>0)
+    {
+        system("cls");
+        printf("                          INFORMES BICICLETAS                       \n");
+        printf("--------------------------------------------------------------------\n");
+
+        switch(subMenuInformesBicicletas())
+        {
+            case 'A':
+                mostrarBicicletasColores(bicicletas, tamBici, tipos, tamTipo, colores, tamColor);
+                break;
+            case 'B':
+                mostrarBicicletasTipos(bicicletas, tamBici, tipos, tamTipo, colores, tamColor);
+                break;
+            case 'C':
+                mostrarMaterialMasElegido(bicicletas, tamBici, tipos, tamTipo, colores, tamColor);
+                break;
+            case 'D':
+                mostrarBicicletasSeparadasTipo(bicicletas, tamBici, tipos, tamTipo, colores, tamColor);
+                break;
+            case 'E':
+                contarBicicletasColorTipo(bicicletas, tamBici, tipos, tamTipo, colores, tamColor);
+                break;
+            case 'F':
+                mostrarColorMasElegido(bicicletas, tamBici, tipos, tamTipo, colores, tamColor);
+                break;
+            default:
+                printf("Opción inválida. Ingrese una opción de la A a la F.\n");
+                fflush(stdin);
+                break;
+        }
+        error=0;
+    }
+    return error;
+}
+
+int mostrarBicicletasColores(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor)
+{
+    int error=-1;
+    int idColor;
+    int flag=0;
+    char descColor[20];
+
+    if(bicicletas!=NULL && tamBici>0 && tipos!=NULL && tamTipo>0 && colores!=NULL && tamColor>0)
+    {
+        system("cls");
+        printf("                  BICICLETAS DE UN COLOR                  \n");
+        printf("----------------------------------------------------------\n");
+
+        mostrarColores(colores, tamColor);
+
+        validarEntero(&idColor,
+                      "Ingrese el ID del color de la bicicleta: ",
+                      "ID inválido. Ingrese el ID del color de la bicicleta: ",
+                      colores[0].id,
+                      colores[tamColor-1].id);
+
+        system("cls");
+        printf("                  BICICLETAS DE UN COLOR                  \n");
+        printf("----------------------------------------------------------\n");
+        printf(" ID |        MARCA        |   TIPO   |  COLOR  | MATERIAL \n");
+        printf("----------------------------------------------------------\n");
+
+        for(int i=0; i<tamBici; i++)
+        {
+            if(!bicicletas[i].isEmpty && bicicletas[i].idColor==idColor)
+            {
+                mostrarBicicleta(bicicletas[i], tipos, tamTipo, colores, tamColor);
+                flag=1;
+            }
+        }
+        printf("\n");
+
+        cargarDescripcionColor(colores, tamColor, idColor, descColor);
+
+        if(!flag)
+        {
+            system("cls");
+            printf("No hay bicicletas para mostrar de color %s.\n\n", descColor);
+        }
+        error=0;
+    }
+
+    return error;
+}
+
+int mostrarBicicletasTipos(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor)
+{
+    int error=-1;
+    int idTipo;
+    int flag=0;
+    char descTipo[20];
+
+    if(bicicletas!=NULL && tamBici>0 && tipos!=NULL && tamTipo>0 && colores!=NULL && tamColor>0)
+    {
+        system("cls");
+        printf("                   BICICLETAS DE UN TIPO                  \n");
+        printf("----------------------------------------------------------\n");
+
+        mostrarTipos(tipos, tamTipo);
+
+        validarEntero(&idTipo,
+                      "Ingrese el ID del tipo de la bicicleta: ",
+                      "ID inválido. Ingrese el ID del tipo de la bicicleta: ",
+                      tipos[0].id,
+                      tipos[tamTipo-1].id);
+
+        system("cls");
+        printf("                   BICICLETAS DE UN TIPO                  \n");
+        printf("----------------------------------------------------------\n");
+        printf(" ID |        MARCA        |   TIPO   |  COLOR  | MATERIAL \n");
+        printf("----------------------------------------------------------\n");
+
+        for(int i=0; i<tamBici; i++)
+        {
+            if(!bicicletas[i].isEmpty && bicicletas[i].idTipo==idTipo)
+            {
+                mostrarBicicleta(bicicletas[i], tipos, tamTipo, colores, tamColor);
+                flag=1;
+            }
+        }
+        printf("\n");
+
+        cargarDescripcionTipo(tipos, tamTipo, idTipo, descTipo);
+
+        if(!flag)
+        {
+            system("cls");
+            printf("No hay bicicletas para mostrar de tipo %s.\n\n", descTipo);
+        }
+        error=0;
+    }
+
+    return error;
+}
+
+int mostrarMaterialMasElegido(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor)
+{
+    int error=-1;
+    int cantCarbono=0;
+    int cantAluminio=0;
+    int cantMaxMaterial=0;
+    int bicicletasPorMaterial[2];
+    char descMaterial[20];
+
+    if(bicicletas!=NULL && tamBici>0 && tipos!=NULL && tamTipo>0 && colores!=NULL && tamColor>0)
+    {
+        system("cls");
+        printf("                    MATERIAL MAS ELEGIDO                  \n");
+        printf("----------------------------------------------------------\n\n");
+
+        for(int i=0; i<tamBici; i++)
+        {
+            if(!bicicletas[i].isEmpty && bicicletas[i].material=='C')
+            {
+                cantCarbono++;
+            }
+            else if(!bicicletas[i].isEmpty && bicicletas[i].material=='A')
+            {
+                cantAluminio++;
+            }
+            bicicletasPorMaterial[0]=cantCarbono;
+            bicicletasPorMaterial[1]=cantAluminio;
+        }
+
+        for(int i=0; i<2; i++)
+        {
+            if(!i || cantMaxMaterial<bicicletasPorMaterial[i])
+            {
+                cantMaxMaterial=bicicletasPorMaterial[i];
+            }
+        }
+
+        system("cls");
+
+        for(int i=0; i<2; i++)
+        {
+            if(!i)
+            {
+                strcpy(descMaterial, "Carbono");
+            }
+            else
+            {
+                strcpy(descMaterial, "Aluminio");
+            }
+
+            if(bicicletasPorMaterial[i]==cantMaxMaterial)
+            {
+                printf("El material más elegido de bicicleta es %s con %d bicicleta(s).\n", descMaterial, cantMaxMaterial);
+            }
+        }
+
+        printf("\n");
+
+        error=0;
+    }
+    return error;
+}
+
+int mostrarBicicletasSeparadasTipo(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor)
+{
+    int error=-1;
+    char descTipo[20];
+    int flag=0;
+
+    if(bicicletas!=NULL && tamBici>0 && tipos!=NULL && tamTipo>0 && colores!=NULL && tamColor>0)
+    {
+        system("cls");
+        printf("                    BICICLETAS POR TIPO                   \n");
+        printf("----------------------------------------------------------\n\n");
+
+        for(int i=0; i<tamTipo; i++)
+        {
+            flag=0;
+            cargarDescripcionTipo(tipos, tamTipo, tipos[i].id, descTipo);
+            printf("Tipo: %s\n\n",descTipo);
+
+            printf(" ID |        MARCA        |   TIPO   |  COLOR  | MATERIAL \n");
+            printf("----------------------------------------------------------\n");
+
+            for(int j=0; j<tamBici; j++)
+            {
+                if(!bicicletas[j].isEmpty && bicicletas[j].idTipo==tipos[i].id)
+                {
+                    mostrarBicicleta(bicicletas[j], tipos, tamTipo, colores, tamColor);
+                    flag=1;
+                }
+            }
+            printf("\n");
+
+            if(!flag)
+            {
+                printf("No hay bicicletas para mostrar de tipo %s.\n\n", descTipo);
+            }
+        }
+        error=0;
+    }
+    return error;
+}
+
+int contarBicicletasColorTipo(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor)
+{
+    int error=-1;
+    int idColor;
+    int idTipo;
+    int cantBicicletas=0;
+    char descColor[20];
+    char descTipo[20];
+
+    if(bicicletas!=NULL && tamBici>0 && tipos!=NULL && tamTipo>0 && colores!=NULL && tamColor>0)
+    {
+        system("cls");
+        printf("               BICICLETAS DE UN COLOR Y TIPO              \n");
+        printf("----------------------------------------------------------\n");
+
+        mostrarColores(colores, tamColor);
+
+        validarEntero(&idColor,
+                      "Ingrese el ID del color de la bicicleta: ",
+                      "ID inválido. Ingrese el ID del color de la bicicleta: ",
+                      colores[0].id,
+                      colores[tamColor-1].id);
+
+        mostrarTipos(tipos, tamTipo);
+
+        validarEntero(&idTipo,
+                      "Ingrese el ID del tipo de la bicicleta: ",
+                      "ID inválido. Ingrese el ID del tipo de la bicicleta: ",
+                      tipos[0].id,
+                      tipos[tamTipo-1].id);
+
+        system("cls");
+        printf("               BICICLETAS DE UN COLOR Y TIPO              \n");
+        printf("----------------------------------------------------------\n");
+        printf(" ID |        MARCA        |   TIPO   |  COLOR  | MATERIAL \n");
+        printf("----------------------------------------------------------\n");
+
+        for(int i=0; i<tamBici; i++)
+        {
+            if(!bicicletas[i].isEmpty && bicicletas[i].idColor==idColor && bicicletas[i].idTipo==idTipo)
+            {
+                mostrarBicicleta(bicicletas[i], tipos, tamTipo, colores, tamColor);
+                cantBicicletas++;
+            }
+        }
+
+        cargarDescripcionColor(colores, tamColor, idColor, descColor);
+        cargarDescripcionTipo(tipos, tamTipo, idTipo, descTipo);
+
+        if(!cantBicicletas)
+        {
+            system("cls");
+            printf("No hay ninguna bicicleta de color %s y tipo %s.\n\n", descColor, descTipo);
+        }
+        else
+        {
+            printf("\nHay %d bicicleta(s) de color %s y tipo %s.\n\n", cantBicicletas, descColor, descTipo);
+        }
+
+        error=0;
+    }
+    return error;
+}
+
+int mostrarColorMasElegido(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor)
+{
+    int error=-1;
+    int bicicletasPorColor[tamColor];
+    int cantidadMaxColor=0;
+
+    if(bicicletas!=NULL && tamBici>0 && tipos!=NULL && tamTipo>0 && colores!=NULL && tamColor>0)
+    {
+        system("cls");
+        printf("                     COLOR MAS ELEGIDO                    \n");
+        printf("----------------------------------------------------------\n");
+
+        for(int i=0; i<tamColor; i++)
+        {
+            for(int j=0; j<tamBici; j++)
+            {
+                if(!bicicletas[j].isEmpty && bicicletas[j].idColor==colores[i].id)
+                {
+                    cantidadMaxColor++;
+                }
+            }
+            bicicletasPorColor[i]=cantidadMaxColor;
+
+            cantidadMaxColor=0;
+        }
+
+        for(int i=0; i<tamColor; i++)
+        {
+            if(!i || cantidadMaxColor<bicicletasPorColor[i])
+            {
+                cantidadMaxColor=bicicletasPorColor[i];
+            }
+        }
+
+        system("cls");
+
+        for(int i=0; i<tamColor; i++)
+        {
+            if(bicicletasPorColor[i]==cantidadMaxColor)
+            {
+                printf("El color más elegido de bicicleta es %s con %d bicicleta(s).\n", colores[i].nombreColor, cantidadMaxColor);
+            }
+        }
+        printf("\n");
+
+        error=0;
     }
     return error;
 }

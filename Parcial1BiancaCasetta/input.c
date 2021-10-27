@@ -22,7 +22,9 @@ char menu()
     printf("G. LISTAR SERVICIOS\n");
     printf("H. ALTA TRABAJO\n");
     printf("I. LISTAR TRABAJOS\n");
-    printf("J. SALIR\n\n");
+    printf("J. INFORMES DE BICICLETAS\n");
+    printf("K. INFORMES DE TRABAJOS\n");
+    printf("L. SALIR\n\n");
     printf("Ingrese una opción: ");
     fflush(stdin);
     scanf("%c", &opcion);
@@ -39,6 +41,44 @@ char subMenuModificar()
     printf("B. MATERIAL\n");
     printf("C. CANCELAR\n\n");
     printf("Seleccione el dato que desea modificar: ");
+    fflush(stdin);
+    scanf("%c", &opcion);
+    opcion=toupper(opcion);
+    printf("\n");
+
+    return opcion;
+}
+
+char subMenuInformesBicicletas()
+{
+    char opcion;
+
+    printf("\nA. LISTAR BICICLETAS DE UN COLOR\n");
+    printf("B. LISTAR BICICLETAS DE UN TIPO\n");
+    printf("C. MOSTRAR MATERIAL MAS ELEGIDO\n");
+    printf("D. LISTAR BICICLETAS POR TIPO\n");
+    printf("E. LISTAR BICICLETAS DE UN COLOR Y TIPO\n");
+    printf("F. MOSTRAR EL/LOS COLOR(ES) MAS ELEGIDO(S)\n\n");
+
+    printf("Seleccione el informe que desea mostrar: ");
+    fflush(stdin);
+    scanf("%c", &opcion);
+    opcion=toupper(opcion);
+    printf("\n");
+
+    return opcion;
+}
+
+char subMenuInformesTrabajos()
+{
+    char opcion;
+
+    printf("\nA. LISTAR TRABAJOS POR BICICLETA\n");
+    printf("B. SUMAR SERVICIOS POR BICICLETA\n");
+    printf("C. LISTAR BICICLETAS POR SERVICIO\n");
+    printf("D. LISTAR SERVICIOS POR FECHA\n\n");
+
+    printf("Seleccione el informe que desea mostrar: ");
     fflush(stdin);
     scanf("%c", &opcion);
     opcion=toupper(opcion);
@@ -193,21 +233,4 @@ int validarEntero(int* numero, char mensaje[], char mensajeError[], int min, int
 	}
 
 	return error;
-}
-
-int validarIdBicicleta(eBicicleta bicicletas[], int tamBici, int idBicicleta)
-{
-    int error=-1;;
-
-    if(bicicletas!=NULL && tamBici>0)
-    {
-        for(int i=0; i<tamBici; i++)
-        {
-            if(bicicletas[i].id==idBicicleta)
-            {
-                error=0;
-            }
-        }
-    }
-    return error;
 }

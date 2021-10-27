@@ -35,8 +35,10 @@ int main()
     inicializarBicicletas(bicicletas, TAMBICI);
     inicializarTrabajos(trabajos, TAMTRAB);
 
-    //hardcodearBicicletas(bicicletas, TAMBICI, 10, &nextIdBicicleta);
-    //opcionA=1;
+    hardcodearBicicletas(bicicletas, TAMBICI, 10, &nextIdBicicleta);
+    opcionA=1;
+    hardcodearTrabajos(trabajos, TAMTRAB, 15, &nextIdTrabajo);
+    opcionH=1;
 
     do
     {
@@ -112,11 +114,33 @@ int main()
                 }
                 else
                 {
-                    printf("No hay ning�n trabajo dado de alta para listar.\n");
+                    printf("\nNo hay ningún trabajo dado de alta para listar.\n\n");
                 }
                 break;
             case 'J':
-                validarCaracter(&salir, "\nConfirmar salida (S/N): ", "Opci�n inv�lida. Confirmar salida (S/N): ", 'S', 'N');
+                if(opcionA)
+                {
+                    system("cls");
+                    informarBicicletas(bicicletas, TAMBICI, tipos, TAMTIPO, colores, TAMCOLOR);
+                }
+                else
+                {
+                    printf("\nNo hay ninguna bicicleta dada de alta para acceder a los informes.\n\n");
+                }
+                break;
+            case 'K':
+                if(opcionH)
+                {
+                    system("cls");
+                    informarTrabajos(trabajos, TAMTRAB, bicicletas, TAMBICI, tipos, TAMTIPO, colores, TAMCOLOR, servicios, TAMSERV);
+                }
+                else
+                {
+                    printf("\nNo hay ningún trabajo dado de alta para acceder a los informes.\n\n");
+                }
+                break;
+            case 'L':
+                validarCaracter(&salir, "\nConfirmar salida (S/N): ", "Opción inválida. Confirmar salida (S/N): ", 'S', 'N');
 
                 if(salir=='S')
                 {
@@ -124,7 +148,7 @@ int main()
                 }
                 break;
             default:
-                printf("Opci�n inv�lida. Ingrese una opci�n de la A a la J.\n");
+                printf("Opción inválida. Ingrese una opción de la A a la L.\n");
                 fflush(stdin);
                 break;
         }

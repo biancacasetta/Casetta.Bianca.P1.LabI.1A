@@ -73,4 +73,79 @@ int mostrarTrabajos(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], i
  */
 int altaTrabajo(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor, eServicio servicios[], int tamServ, int* id);
 
+/** \brief Muestra un submenú donde se puede seleccionar el informe de trabajos que el usuario desea y se informa la opción seleccionada
+ * \param trabajos[] eTrabajo El array de estructuras a mostrar
+ * \param tamTrab int El tamaño del array a mostrar
+ * \param bicicletas[] eBicicletas El array de estructuras anidadas
+ * \param tamBici int El tamaño del array de estructuras anidadas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño del array de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño del array de estructuras anidadas
+ * \param servicios[] eColor El array de estructuras anidadas
+ * \param tamServ int El tamaño del array de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int informarTrabajos(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor, eServicio servicios[], int tamServ);
+
+/** \brief Muestra todos los trabajos que tiene una bicicleta seleccionada por el usuario
+ * \param trabajos[] eTrabajo El array de estructuras a mostrar
+ * \param tamTrab int El tamaño del array a mostrar
+ * \param bicicletas[] eBicicletas El array de estructuras anidadas
+ * \param tamBici int El tamaño del array de estructuras anidadas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño del array de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño del array de estructuras anidadas
+ * \param servicios[] eColor El array de estructuras anidadas
+ * \param tamServ int El tamaño del array de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int mostrarTrabajosBicicleta(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor, eServicio servicios[], int tamServ);
+
+/** \brief Muestra todos los servicios que se le realizaron a una bicicleta seleccionada por el usuario y luego muestra la suma de los montos de los importes.
+ * \param trabajos[] eTrabajo El array de estructuras a mostrar
+ * \param tamTrab int El tamaño del array a mostrar
+ * \param bicicletas[] eBicicletas El array de estructuras anidadas
+ * \param tamBici int El tamaño del array de estructuras anidadas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño del array de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño del array de estructuras anidadas
+ * \param servicios[] eColor El array de estructuras anidadas
+ * \param tamServ int El tamaño del array de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int sumarServiciosBicicleta(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor, eServicio servicios[], int tamServ);
+
+/** \brief Muestra un listado de los trabajos de las bicicletas a las que se les realizó un servicio seleccionado por el usuario
+ * \param trabajos[] eTrabajo El array de estructuras a mostrar
+ * \param tamTrab int El tamaño del array a mostrar
+ * \param bicicletas[] eBicicletas El array de estructuras anidadas
+ * \param tamBici int El tamaño del array de estructuras anidadas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño del array de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño del array de estructuras anidadas
+ * \param servicios[] eColor El array de estructuras anidadas
+ * \param tamServ int El tamaño del array de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int mostrarBicicletasServicio(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor, eServicio servicios[], int tamServ);
+
+/** \brief Muestra los tipos de servicios que se realizaron en una fecha ingresada por el usuario y luego se informa la cantidad de servicios realizados.
+ * \param trabajos[] eTrabajo El array de estructuras a mostrar
+ * \param tamTrab int El tamaño del array a mostrar
+ * \param bicicletas[] eBicicletas El array de estructuras anidadas
+ * \param tamBici int El tamaño del array de estructuras anidadas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño del array de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño del array de estructuras anidadas
+ * \param servicios[] eColor El array de estructuras anidadas
+ * \param tamServ int El tamaño del array de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int mostrarServiciosFecha(eTrabajo trabajos[], int tamTrab, eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor, eServicio servicios[], int tamServ);
+
 #endif // TRABAJO_H_INCLUDED

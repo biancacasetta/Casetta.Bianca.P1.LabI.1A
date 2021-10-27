@@ -115,3 +115,80 @@ int modificarBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int 
  * \return int -1 si hubo error, 0 si no hubo error
  */
 int bajaBicicleta(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
+
+/** \brief Muestra un submenú donde se puede seleccionar el informe de bicicletas que el usuario desea y se informa la opción seleccionada
+ * \param bicicletas[] eBicicleta El array de bicicletas
+ * \param tamBici int El tamaño del array de bicicletas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int informarBicicletas(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
+
+/** \brief Muestra las bicicletas de un color seleccionado por el usuario
+ * \param bicicletas[] eBicicleta El array de bicicletas
+ * \param tamBici int El tamaño del array de bicicletas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int mostrarBicicletasColores(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
+
+/** \brief Muestra las bicicletas de un tipo seleccionado por el usuario
+ * \param bicicletas[] eBicicleta El array de bicicletas
+ * \param tamBici int El tamaño del array de bicicletas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int mostrarBicicletasTipos(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
+
+/** \brief Muestra el material con más cantidad de bicicletas asociadas y la cantidad de bicicletas. Si la cantidad es igual, muestra los dos materiales.
+ * \param bicicletas[] eBicicleta El array de bicicletas
+ * \param tamBici int El tamaño del array de bicicletas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int mostrarMaterialMasElegido(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
+
+/** \brief Muestra todas las bicicletas separadas por tipo de bicicleta
+ * \param bicicletas[] eBicicleta El array de bicicletas
+ * \param tamBici int El tamaño del array de bicicletas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int mostrarBicicletasSeparadasTipo(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
+
+/** \brief Muestra la cantidad de bicicletas de un color que el usuario selecciona
+ * \param bicicletas[] eBicicleta El array de bicicletas
+ * \param tamBici int El tamaño del array de bicicletas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int contarBicicletasColorTipo(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
+
+/** \brief Muestra el color con mayor cantidad de bicicletas
+ * \param bicicletas[] eBicicleta El array de bicicletas
+ * \param tamBici int El tamaño del array de bicicletas
+ * \param tipos[] eTipo El array de estructuras anidadas
+ * \param tamTipo int El tamaño de estructuras anidadas
+ * \param colores[] eColor El array de estructuras anidadas
+ * \param tamColor int El tamaño de estructuras anidadas
+ * \return int -1 si hubo error, 0 si no hubo error
+ */
+int mostrarColorMasElegido(eBicicleta bicicletas[], int tamBici, eTipo tipos[], int tamTipo, eColor colores[], int tamColor);
